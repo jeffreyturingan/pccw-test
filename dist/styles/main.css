@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo:300,400,700");
+/*RESET CSS*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-family: Arial;
+  font-size: 14px;
+  background: #fcfcfc;
+  font-weight: 300;
+  line-height: 20px;
+  width: 100%;
+  height: auto;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+p {
+  line-height: 25px;
+  margin: 5px 0 15px;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  outline-width: 0 !important;
+  cursor: pointer;
+  float: none;
+  color: inherit;
+}
+
+a:hover, a:active, a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+span {
+  float: none;
+}
+
+em {
+  font-style: italic;
+  font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-family: "Heebo", sans-serif;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  font-family: inherit;
+}
+
+strong, b {
+  font-weight: bold;
+}
+
+*, *::after, *::before {
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input, textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.container-fluid.no-padding {
+  padding: 0 !important;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.container-fluid.light {
+  background: #fff;
+  color: #222;
+}
+
+.container-fluid.dark {
+  background: linear-gradient(#222, #111);
+  color: #777;
+}
+
+.container-fluid.dark .entry-title {
+  color: #888;
+}
+
+.container-fluid.metallic {
+  background: linear-gradient(#fff, #333);
+  color: #111;
+}
+
+p {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 1024px) {
+  p {
+    font-size: 16px;
+  }
+}
+
+img {
+  pointer-events: none;
+}
+
+.input-group .form-control:first-child, .input-group-addon:first-child {
+  border-radius: 0;
+}
+
+body {
+  background: #ececec;
+  margin: 0 0;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  margin: 20px auto;
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 50px;
+  }
+}
+
+.module-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: calc(100vw - 20px);
+}
+
+@media only screen and (min-width: 768px) {
+  .module-form {
+    width: 500px;
+  }
+}
+
+.module-form form {
+  padding: 20px;
+  border: 1px #ddd solid;
+  background: #eee;
+  transition: 500ms;
+}
+
+.module-form form.hide {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+}
+
+.module-form form h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #333;
+  margin: 10px auto;
+}
+
+.module-form label {
+  display: block;
+  font-size: 14px;
+  color: #444;
+  font-family: Arial;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: 500ms;
+}
+
+.module-form label small {
+  font-size: 12px;
+}
+
+.module-form label small.required {
+  color: #CF292B;
+  font-size: 11px;
+  opacity: 0;
+  transition: 500ms;
+}
+
+.module-form label:hover .required {
+  opacity: 1;
+}
+
+.module-form input[type="text"] {
+  border: 1px #ccc solid;
+  padding: 10px;
+  width: 100%;
+}
+
+.module-form span.error {
+  font-size: 11px;
+  color: red;
+  line-height: 11px;
+}
+
+.module-form .check-box {
+  float: left;
+  margin-right: 5px;
+}
+
+.module-form .check-box input[type=checkbox] {
+  -webkit-appearance: checkbox;
+     -moz-appearance: checkbox;
+          appearance: checkbox;
+}
+
+.module-form input[type="reset"] {
+  padding: 0px 20px;
+  border: 0;
+  background: rgba(119, 119, 119, 0.5);
+  color: #fff;
+  font-size: 14px;
+  transition: 500ms;
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  line-height: 30px;
+}
+
+.module-form input[type="reset"]:hover {
+  background: #777777;
+}
+
+.module-form input[type="submit"] {
+  padding: 0px 20px;
+  border: 0;
+  background: rgba(207, 41, 43, 0.5);
+  color: #fff;
+  font-size: 14px;
+  transition: 500ms;
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  line-height: 30px;
+}
+
+.module-form input[type="submit"]:hover {
+  background: #cf292b;
+}
+
+.module-form input[type="submit"]:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.module-form input[type="submit"]:disabled:hover {
+  font-size: 14px;
+}
+
+.module-form .successbox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.module-form .successbox h2 {
+  font-size: 50px;
+  font-weight: 700;
+  font-family: "Heebo", sans-serif;
+  color: #222;
+  text-align: center;
+  line-height: normal;
+  width: 100%;
+  display: block;
+}
+
+.module-form .successbox h2 small {
+  font-size: 14px;
+  font-weight: 300;
+  display: block;
+  color: #222;
+  margin: 10px auto;
+  font-family: Arial;
+}
+
+/*# sourceMappingURL=main.css.map */

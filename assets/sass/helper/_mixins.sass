@@ -1,0 +1,231 @@
+//Calc
+=calc($property, $expression)
+  #{$property}: -moz-calc(#{$expression})
+  #{$property}: -webkit-calc(#{$expression})
+  #{$property}: calc(#{$expression})
+
+
+//ASPECT RATIO
+=aspect-ratio($width, $height)
+  position: relative
+  overflow: hidden
+
+  &:before
+    display: block
+    content: ""
+    width: 100%
+    padding-top: $height / $width * 100%
+  > .acontent
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 1
+
+
+//CSS3 MIX
+=bradius($bradius...)
+  -moz-border-radius: $bradius
+  -webkit-border-radius: $bradius
+  -ms-border-radius: $bradius
+  -o-border-radius: $bradius
+  border-radius: $bradius
+
+=transitionspeed($time...)
+  -moz-transition: $time
+  -webkit-transition: $time
+  -ms-transition: $time
+  -o-transition: $time
+  transition: $time
+
+=tdelay($tdelay...)
+  -moz-transition-delay: $tdelay
+  -webkit-transition-delay: $tdelay
+  -ms-transition-delay: $tdelay
+  -o-transition-delay: $tdelay
+  transition-delay: $tdelay
+
+=transform($trans...)
+  -moz-transform: $trans
+  -webkit-transform: $trans
+  -ms-transform: $trans
+  -o-transform: $trans
+  transform: $trans
+
+=transformstyle($tstyle...)
+  -moz-transform-style: $tstyle
+  -webkit-transform-style: $tstyle
+  -ms-transform-style: $tstyle
+  -o-transform-style: $tstyle
+  transform-style: $tstyle
+
+=scale($scale...)
+  @include transform(scale($scale))
+
+=rotate($deg)
+  @include transform(rotate($deg))
+
+=rotateY($deg2)
+  @include transform(rotateY($deg2))
+
+=rotateX($deg2)
+  @include transform(rotateY($deg2))
+
+=translate($transP,  $transD)
+  @include transform(translate$transP($transD))
+
+=boxshadow($bshadow)
+  -moz-box-shadow: $bshadow
+  -webkit-box-shadow: $bshadow
+  -ms-box-shadow: $bshadow
+  -o-box-shadow: $bshadow
+  box-shadow: $bshadow
+
+=appearance($appearance)
+  -moz-appearance: $appearance
+  -webkit-appearance: $appearance
+  appearance: $appearance
+
+=mboxshadow($mshadow...)
+  -moz-box-shadow: $mshadow
+  -webkit-box-shadow: $mshadow
+  -ms-box-shadow: $mshadow
+  -o-box-shadow: $mshadow
+  box-shadow: $mshadow
+
+=textshadow($tshadow...)
+  -moz-text-shadow: $tshadow
+  -webkit-text-shadow: $tshadow
+  -ms-text-shadow: $tshadow
+  -o-text-shadow: $tshadow
+  text-shadow: $tshadow
+
+=borderbox
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  -ms-box-sizing: border-box
+  -o-box-sizing: border-box
+  box-sizing: border-box
+
+=sticky
+  position: -webkit-sticky
+  position: sticky
+
+=centerer($horizontal: true, $vertical: true)
+  position: absolute
+  @if ($horizontal and $vertical)
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+  @else if ($horizontal)
+    left: 50%
+    transform: translate(-50%, 0)
+  @else if ($vertical)
+    top: 50%
+    transform: translate(0, -50%)
+
+
+=opacity($opacity)
+  opacity: $opacity
+  $opacity-ie: $opacity * 100
+  filter: alpha(opacity=$opacity-ie)
+
+//GRADIENT
+=lineargradient($lgradient...)
+  background: -moz-linear-gradient($lgradient)
+  background: -webkit-linear-gradient($lgradient)
+  background: -ms-linear-gradient($lgradient)
+  background: -o-linear-gradient($lgradient)
+  background: linear-gradient($lgradient)
+
+=lineargradientC($lgradient...)
+  background-color: -moz-linear-gradient($lgradient)
+  background-color: -webkit-linear-gradient($lgradient)
+  background-color: -ms-linear-gradient($lgradient)
+  background-color: -o-linear-gradient($lgradient)
+  background-color: linear-gradient($lgradient)
+
+
+=radialgradient($lgradient...)
+  background: -moz-radial-gradient($lgradient)
+  background: -webkit-radial-gradient($lgradient)
+  background: -ms-radial-gradient($lgradient)
+  background: -o-radial-gradient($lgradient)
+  background: radial-gradient($lgradient)
+
+//black and white
+=imgfilter($filterp...)
+  -moz-filter: $filterp
+  -ms-filter: $filterp
+  -webkit-filter: $filterp
+  filter: $filterp
+
+
+=animation($animname)
+  -moz-animation: $animname
+  -webkit-animation: $animname
+  -ms-animation: $animname
+  -o-animation: $animname
+  animation: $animname
+
+=animatename($animatename)
+  -moz-animation-name: $animatename
+  -webkit-animation-name: $animatename
+  -ms-animation-name: $animatename
+  -o-animation-name: $animatename
+  animation-name: $animatename
+
+=stopanim
+  -moz-animation-play-state: paused$imp
+  -webkit-animation-play-state: paused$imp
+  animation-play-state: paused$imp
+
+=keyframes($name)
+
+  @-moz-keyframes #{$name}
+    @content
+
+  @-webkit-keyframes #{$name}
+    @content
+
+  @-ms-keyframes #{$name}
+    @content
+
+  @keyframes #{$name}
+    @content
+
+
+
+//COMPASS WRITTEN
+
+
+//transition
+=ctransition($values...)
+  $transitions: ()
+  @each $declaration in $values
+    $prop: nth($declaration, 1)
+    $prop-opts: ()
+    $length: length($declaration)
+    @for $i from 2 through $length
+      $prop-opts: append($prop-opts, nth($declaration, $i))
+
+    $trans: ($prop, $prop-opts)
+    $transitions: append($transitions, $trans, comma)
+
+
+  -webkit-transition: trans-prefix($transitions, webkit)
+  -moz-transition: trans-prefix($transitions, moz)
+  -o-transition: trans-prefix($transitions, o)
+  transition: $values
+
+
+
+
+=breakpoint($bpoints)
+  @media only screen and (min-width: $bpoints)
+    @content
+
+
+
+

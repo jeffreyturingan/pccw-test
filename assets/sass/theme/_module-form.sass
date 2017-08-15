@@ -1,0 +1,124 @@
+.module-form
+  +centerer
+  width: calc(100vw - 20px)
+
+  +breakpoint($bp-medium)
+    width: 500px
+
+
+  form
+    padding: 20px
+    border: 1px #ddd solid
+    background: #eee
+    transition: 500ms
+
+    &.hide
+      transform: scale(0)
+      opacity: 0
+
+    h2
+      font-size: 30px
+      font-weight: 700
+      color: #333
+      margin: 10px auto
+
+  label
+    display: block
+    font-size: 14px
+    color: #444
+    font-family: $default
+    margin-bottom: 5px
+    cursor: pointer
+    transition: 500ms
+
+    small
+      font-size: 12px
+
+      &.required
+        color: $red
+        font-size: 11px
+        opacity: 0
+        transition: 500ms
+    &:hover
+      .required
+        opacity: 1
+
+  input[type="text"]
+    border: 1px #ccc solid
+    padding: 10px
+    width: 100%
+
+
+
+  span.error
+    font-size: 11px
+    color: red
+    line-height: 11px
+
+  .check-box
+    float: left
+    margin-right: 5px
+
+    input[type=checkbox]
+      appearance: checkbox
+
+  input[type="reset"]
+    padding: 0px 20px
+    border: 0
+    background: rgba(#777,0.5)
+    color: #fff
+    font-size: 14px
+    transition: 500ms
+    cursor: pointer
+    display: inline-block
+    height: 40px
+    line-height: 30px
+
+    &:hover
+      background: rgba(#777,1)
+
+  input[type="submit"]
+    padding: 0px 20px
+    border: 0
+    background: rgba($red,0.5)
+    color: #fff
+    font-size: 14px
+    transition: 500ms
+    cursor: pointer
+    display: inline-block
+    height: 40px
+    line-height: 30px
+
+    &:hover
+      background: rgba($red,1)
+
+    &:disabled
+      background: #ccc
+      cursor: not-allowed
+
+      &:hover
+        font-size: 14px
+
+  .successbox
+    +centerer
+    width: 100%
+
+    h2
+      font-size: 50px
+      font-weight: 700
+      font-family: $Heboo
+      color: #222
+      text-align: center
+      line-height: normal
+      width: 100%
+      display: block
+
+
+
+      small
+        font-size: 14px
+        font-weight: 300
+        display: block
+        color: #222
+        margin: 10px auto
+        font-family: $default

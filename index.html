@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <title>Form Page | PCCW Front End Exam</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="./dist/styles/vendors/vendor.css">
+    <link rel="stylesheet" href="./dist/styles/main.css">
+</head>
+<body>
+    <h1>Front End Task Exam</h1>
+
+    <div class="module-form js-form">
+        <form id="testform" method="POST" action="/form/ajax/path/">
+            <h2>Simple Form</h2>
+            <fieldset>
+                <p>
+                    <label for="fullname">Full Name : <small class="required">(Required)</small></label>
+                    <input id="fullname" name="fullname" type="text" placeholder="Enter Full Name">
+                </p>
+                <p>
+                    <label for="datepicker">Date : <small class="required">(Required)</small></label>
+                    <input type="text" id="datepicker" name="datepicker" placeholder="Select Date Here">
+                </p>
+                <p>
+                    <span class="check-box"><input id="verify" type="checkbox"></span>
+                    <label for="verify"><small>Check the Box to enable Submit Button</small></label>
+                </p>
+
+                <p>
+                    <input id="resetForm" type="reset" value="Reset">
+                    <input id="submitForm" type="submit" value="Send" disabled>
+                </p>
+            </fieldset>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="./dist/scripts/vendors.js"></script>
+    <script type="text/javascript" src="./dist/scripts/main.js"></script>
+</body>
+</html>
